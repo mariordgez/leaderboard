@@ -1,55 +1,57 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# To Do List
 
-# Webpack To Do List
-
-c
-
-> "To-do list" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.
+Minimalist To Do list to organize your day within your web browser
 
 ## Built With
 
-- JavaScript
 - HTML
-- CSS
-- Webpack for JS
+- CSS3
+- JavaScript
+- Webpack
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps:
+**You'll need to have git and npm installed in you environment to follow these instructions.**
+To install git go to https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+To install npm go to https://nodejs.org/en/
 
-- clone the repo with `git clone https://github.com/ad9311/webpack-todo-list.git`
-- change directory to the root folder `cd webpack-todo-list`
-- run `npm install`
-- to start the server run `npm start`
+To get a local copy of the repository please run the following commands on your terminal:
 
-### Prerequisites
+```bash
+$ cd <folder>
+$ git clone git@github.com:mariordgez/todo-list.git
+$ cd To-Do-List
+```
 
-- [NPM](https://github.com/ad9311/webpack-todo-list.git)
-- [Yarn](https://yarnpkg.com/getting-started/install) `npm install -g yarn`
+To be able to run the project, you'll need to have webpack installed
 
-### Live Version
+```bash
+$ npm install webpack webpack-cli --save-dev
+```
 
-Live version available here: [webpack-todo-list](https://ad9311.github.io/webpack-todo-list/dist/index.html)
+With this, you can use
 
-### Testing
+```bash
+$ npm run build
+$ npm start
+```
 
-This project uses [Jest](https://jestjs.io/) for testing. To install jest run `npm install -g jest`
+To build the project and to start a server, respectively. `npm start` should open the page in a browser by itself, if it
+doesn't, you can just access `localhost:8080` to see the project.
 
-To run the tests, use `npm test` command.
+## Author
 
-## Authors
+👤 **Mario Alberto Rodriguez Cota**
 
-👤 **Author1**
-
-- GitHub: [@ad9311](https://github.com/ad9311)
-- Twitter: [@adiaz9311](https://twitter.com/adiaz9311)
-- LinkedIn: [Ángel Díaz](https://linkedin.com/in/adiaz9311)
+- GitHub: [@mariordgez](https://github.com/mariordgez)
+- Twitter: [@MarioRo75396624](https://twitter.com/MarioRo75396624)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/mario-alberto-rodriguez-cota-a2860a205)
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome!
+Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/ad9311/webpack-todo-list/issues).
+Feel free to check the [issues page](https://github.com/JAAR91/Awesome-books/issues).
 
 ## Show your support
 
@@ -57,4 +59,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
+[MIT](/LICENSE)
