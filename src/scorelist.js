@@ -3,7 +3,7 @@ export default class ScoreList {
     this.list = [];
   }
 
-  addTask(score) {
+  addScore(score) {
     this.list.push(score);
   }
 
