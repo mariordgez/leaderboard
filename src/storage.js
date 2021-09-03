@@ -1,8 +1,7 @@
 export default class Storage {
-  // game ID: m0uJU78hgC1wzCRUBfx8
   static getScores = async () => {
     const response = await fetch(
-      'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/MOPWIcjFvO9yMNxd0RRq/scores/',
+      'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/MOPWIcjFvO9yMNxd0RRq/scores/'
     );
     const data = await response.json();
     const result = await data.result;
@@ -18,7 +17,7 @@ export default class Storage {
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
         },
-      },
+      }
     );
     const data = response.json;
     const { result } = data;

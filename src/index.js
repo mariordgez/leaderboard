@@ -47,7 +47,7 @@ const addScore = (event) => {
   event.preventDefault();
   const newScore = new Score(lbName.value, lbScore.value);
   Storage.postToAPI(
-    JSON.stringify({ user: newScore.user, score: newScore.score }),
+    JSON.stringify({ user: newScore.user, score: newScore.score })
   ).then(() => {
     Display.displayList();
   });
@@ -58,6 +58,5 @@ const refreshScore = (event) => {
   window.location.reload();
 };
 
-// new game ID: MOPWIcjFvO9yMNxd0RRq
 scoreAdd.addEventListener('click', addScore);
 scoreRefresh.addEventListener('click', refreshScore);
