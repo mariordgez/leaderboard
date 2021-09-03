@@ -1,10 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
+  background-image: linear-gradient(120deg, #f6d365, #fda085);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
   text-align: center;
   align-items: center;
 }
 
+header {
+  font-size: 2rem;
+  min-height: 20vh;
+}
+
+form input,
+form button {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  background: white;
+}
+
+form button {
+  color: #d88771;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  color: white;
+  background: #d88771;
+}
+
 .container {
   display: flex;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .item {
