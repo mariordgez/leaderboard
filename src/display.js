@@ -7,7 +7,7 @@ export default class Display {
 
     const lbLi = document.createElement('li');
     lbLi.classList.add('lb-item');
-    lbLi.innerText = score.name + ':' + score.score;
+    lbLi.innerText = `${score.name}: ${score.score}`;
     lbDiv.appendChild(lbLi);
     leaderboard.appendChild(lbDiv);
   }

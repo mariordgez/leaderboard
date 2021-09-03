@@ -15,7 +15,7 @@ const scoreRefresh = document.querySelector('.score-refresh');
 
 document.addEventListener(
   'DOMContentLoaded',
-  Display.displayList(Storage.getList().list)
+  Display.displayList(Storage.getList().list),
 );
 
 const addScore = (event) => {

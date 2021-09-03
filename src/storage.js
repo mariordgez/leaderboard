@@ -12,11 +12,11 @@ export default class Storage {
     }
     const scoreList = Object.assign(
       new ScoreList(),
-      JSON.parse(localStorage.getItem('ScoreList'))
+      JSON.parse(localStorage.getItem('ScoreList')),
     );
 
     scoreList.setList(
-      scoreList.getScores().map((score) => Object.assign(new Score(), score))
+      scoreList.getScores().map((score) => Object.assign(new Score(), score)),
     );
 
     return scoreList;
