@@ -13,10 +13,7 @@ const lbScore = document.querySelector('.lb-score');
 const scoreAdd = document.querySelector('.score-add');
 const scoreRefresh = document.querySelector('.score-refresh');
 
-document.addEventListener(
-  'DOMContentLoaded',
-  Display.displayList(Storage.getList().list)
-);
+document.addEventListener('DOMContentLoaded', Display.displayList());
 const getgame = () => {
   fetch(
     'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games',
@@ -68,17 +65,20 @@ setInputFilter(lbScore, function (value) {
 const addScore = (event) => {
   event.preventDefault();
   const newScore = new Score(lbName.value, lbScore.value);
-  Storage.saveScore(newScore);
   getgame();
-
-  Display.addToUI(newScore);
+  Storage.postToAPI(
+    JSON.stringify({ user: newScore.user, score: newScore.score })
+  ).then(() => {
+    console.log(JSON.stringify({ user: newScore.user, score: newScore.score }));
+    Display.displayList();
+  });
 };
 
 const refreshScore = (event) => {
   event.preventDefault();
-
   window.location.reload();
 };
 // game ID: m0uJU78hgC1wzCRUBfx8
+// new game ID: MOPWIcjFvO9yMNxd0RRq
 scoreAdd.addEventListener('click', addScore);
 scoreRefresh.addEventListener('click', refreshScore);

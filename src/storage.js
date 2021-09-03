@@ -3,18 +3,19 @@ import ScoreList from './scorelist.js';
 
 export default class Storage {
   // game ID: m0uJU78hgC1wzCRUBfx8
-  getScores = async () => {
+  static getScores = async () => {
     const response = await fetch(
-      'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/m0uJU78hgC1wzCRUBfx8/scores/'
+      'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/MOPWIcjFvO9yMNxd0RRq/scores/'
     );
     const data = await response.json();
     const result = await data.result;
+    console.log(result);
     return result;
   };
 
-  postToAPI = async (scoreData) => {
+  static postToAPI = async (scoreData) => {
     const response = await fetch(
-      'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/m0uJU78hgC1wzCRUBfx8/scores/',
+      'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/MOPWIcjFvO9yMNxd0RRq/scores/',
       {
         method: 'POST',
         body: scoreData,
@@ -23,8 +24,9 @@ export default class Storage {
         },
       }
     );
-    const data = await response.json;
+    const data = response.json;
     const { result } = data;
+    console.log(result);
     return result;
   };
 }
