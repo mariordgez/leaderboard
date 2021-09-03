@@ -1,18 +1,19 @@
-/* eslint-disable */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
-  entry: {
-    import: './src/list.js',
-    import: './src/element.js',
-    import: './src/manager.js',
-    index: './src/index.js',
+  entry: './src/index.js',
+  devServer: {
+    contentBase: './dist',
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+    }),
+  ],
   output: {
-    path: path.resolve(__dirname, './dist'),
-    filename: '[name].bundle.js',
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
@@ -20,20 +21,6 @@ module.exports = {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-      },
     ],
   },
-  devServer: {
-    contentBase: './dist',
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-      inject: true,
-    }),
-  ],
 };
-/* eslint-enable */

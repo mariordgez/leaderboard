@@ -5,23 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leaderboard</title>
   </head>
-  <body>
+  
     <header>
       <h1>Leaderboard</h1>
     </header>
-    <form>
-      <input type="text" class="todo-input" />
-      <button class="todo-add" type="submit">
-        <i class="fas fa-plus-square"></i>
-      </button>
-    </form>
-    <div class="todo-container">
-      <ul class="todo-list"></ul>
+    <div class='container'>
+      
+      <div class="item">
+      <form>
+       <label for="refresh-button">Recent scores: </label>
+        <button id= 'refresh-button' class="score-refresh" type="submit">Refresh</button>
+      </form>
+      <div class="leaderboard-container">
+        <ul class="leaderboard"></ul>
+      </div>
+      </div>
+      <div class="item">
+        <form>
+          <label for= 'lb-form'>Add your Score </label><br>
+          <input id= 'lb-form' type="text" class="lb-name" placeholder="Your name" /> <br>
+          <input type="text" class="lb-score" placeholder="Your Score" /> <br>
+          <button class="score-add" type="submit">
+            Submit
+          </button>
+        </form>
+        </div>
     </div>
-    <form>
-      <button class="todo-clear" type="submit">
-        Clear All Completed Tasks
-      </button>
-    </form>
   </body>
 </html>
