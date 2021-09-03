@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background-image: linear-gradient(120deg, #f6d365, #fda085);
+  background-image: linear-gradient(120deg, #fcd555, #ff8968);
   color: white;
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
@@ -13,7 +13,7 @@ body {
 }
 
 header {
-  font-size: 2rem;
+  font-size: 1.5rem;
   min-height: 20vh;
 }
 
@@ -47,4 +47,12 @@ form button:hover {
 
 .item {
   width: 50%;
+}
+
+.leaderboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  flex-direction: column;
 }
