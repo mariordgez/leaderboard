@@ -9,7 +9,6 @@ export default class Storage {
     );
     const data = await response.json();
     const result = await data.result;
-    console.log(result);
     return result;
   };
 
@@ -26,7 +25,6 @@ export default class Storage {
     );
     const data = response.json;
     const { result } = data;
-    console.log(result);
     return result;
   };
 }

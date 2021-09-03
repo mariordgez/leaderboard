@@ -14,23 +14,6 @@ const scoreAdd = document.querySelector('.score-add');
 const scoreRefresh = document.querySelector('.score-refresh');
 
 document.addEventListener('DOMContentLoaded', Display.displayList());
-const getgame = () => {
-  fetch(
-    'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games',
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: 'Marios game',
-      }),
-    }
-  )
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => console.log(data))
-    .catch((error) => console.log('ERROR'));
-};
 
 const setInputFilter = (textbox, inputFilter) => {
   [
@@ -65,7 +48,6 @@ setInputFilter(lbScore, function (value) {
 const addScore = (event) => {
   event.preventDefault();
   const newScore = new Score(lbName.value, lbScore.value);
-  getgame();
   Storage.postToAPI(
     JSON.stringify({ user: newScore.user, score: newScore.score })
   ).then(() => {
