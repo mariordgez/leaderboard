@@ -1,30 +1,26 @@
-import Score from './score.js';
-import ScoreList from './scorelist.js';
-
 export default class Storage {
-  static saveList(scoreList) {
-    localStorage.setItem('ScoreList', JSON.stringify(scoreList));
-  }
-
-  static getList() {
-    if (localStorage.getItem('ScoreList') == null) {
-      Storage.saveList(new ScoreList());
-    }
-    const scoreList = Object.assign(
-      new ScoreList(),
-      JSON.parse(localStorage.getItem('ScoreList')),
+  static getScores = async () => {
+    const response = await fetch(
+      'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/MOPWIcjFvO9yMNxd0RRq/scores/',
     );
+    const data = await response.json();
+    const result = await data.result;
+    return result;
+  };
 
-    scoreList.setList(
-      scoreList.getScores().map((score) => Object.assign(new Score(), score)),
+  static postToAPI = async (scoreData) => {
+    const response = await fetch(
+      'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/MOPWIcjFvO9yMNxd0RRq/scores/',
+      {
+        method: 'POST',
+        body: scoreData,
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      },
     );
-
-    return scoreList;
-  }
-
-  static saveScore(score) {
-    const oldList = Storage.getList();
-    oldList.addScore(score);
-    Storage.saveList(oldList);
-  }
+    const data = response.json;
+    const { result } = data;
+    return result;
+  };
 }
