@@ -79,6 +79,6 @@ const refreshScore = (event) => {
 
   window.location.reload();
 };
-
+// game ID: m0uJU78hgC1wzCRUBfx8
 scoreAdd.addEventListener('click', addScore);
 scoreRefresh.addEventListener('click', refreshScore);
